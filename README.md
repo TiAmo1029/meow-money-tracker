@@ -8,7 +8,7 @@
 
 一款功能完善、移动端优先的个人记账Web App。本项目旨在深入实践通用前端业务逻辑，并全面展示Vue 3全家桶的工程化开发能力。
 
-**[✨ 点击这里，在线访问项目 (Live Demo on Vercel)](https://meow-money-tracker-mu-nine.vercel.app/)**
+**[✨ 点击这里，在线访问项目 (Live Demo on Vercel)](https://meow-money-tracker.vercel.app/)**
 
 ---
 
