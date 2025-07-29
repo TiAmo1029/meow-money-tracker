@@ -1,19 +1,19 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router/index';
-import { createPinia } from 'pinia';
+import router from './router'
+import { createPinia } from 'pinia'
 
-
-// 1. 引入Vant的核心组件库
+// 1. 完整地导入 Vant 库
 import Vant from 'vant';
-// 2. 引入Vant的全局样式
+// 2. 完整地导入 Vant 的所有 CSS 样式
 import 'vant/lib/index.css';
 
+const app = createApp(App)
 
-const app = createApp(App);
+app.use(createPinia())
+app.use(router)
 
-app.use(createPinia());
-app.use(router);
-app.use(Vant); // 3. 注册Vant插件
+// 3. 全局注册 Vant 插件
+app.use(Vant);
 
-app.mount('#app');
+app.mount('#app')

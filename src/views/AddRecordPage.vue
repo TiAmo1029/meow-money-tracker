@@ -51,7 +51,11 @@
 import { ref } from 'vue';
 import { useRecordStore } from '@/stores/recordStore';
 import { useRouter } from 'vue-router';
-import { Toast } from 'vant';
+
+// 导入所有需要用到的 Vant 组件
+import { showToast } from 'vant/es';
+
+
 
 const recordStore = useRecordStore();
 const router = useRouter();
@@ -84,7 +88,7 @@ const onDateConfirm = ({ selectedValues }) => {
 // 提交表单
 const onSubmit = () => {
     recordStore.addRecord(form.value);
-    Toast('保存成功！');
+    showToast('保存成功！');
     router.push('/');
 };
 </script>

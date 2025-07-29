@@ -16,16 +16,16 @@
 
 <script setup>
 import { useRecordStore } from '@/stores/recordStore';
-import { Dialog, Toast } from 'vant';
+import { showDialog, showToast } from 'vant';
 
 const recordStore = useRecordStore();
 
 const showAbout = () => {
-    Toast('喵喵记账 v1.0\n由 秦亚会 开发');
+    showToast('喵喵记账 v1.0\n由 秦亚会 开发');
 };
 
 const clearData = () => {
-    Dialog({
+    showDialog({
         title: '危险操作',
         message: '这将清除所有本地存储的记账数据，且无法恢复。确定要继续吗？',
         // --- 核心优化在这里 ---
@@ -34,7 +34,7 @@ const clearData = () => {
     }).then(() => {
         // 调用store里一个新增的action来清空数据
         recordStore.clearAllRecords();
-        Toast('所有数据已清除');
+        showToast('所有数据已清除');
     }).catch(() => { });
 };
 </script>

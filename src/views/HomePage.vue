@@ -21,13 +21,14 @@
 
 <script setup>
 import { useRecordStore } from '@/stores/recordStore';
-import { Dialog } from 'vant'; // 导入 Dialog 对话框
+import { showDialog } from 'vant'; // 导入 Dialog 对话框
+
 
 const recordStore = useRecordStore();
 
 // 定义删除处理函数
 const handleDelete = (recordId) => {
-    Dialog({
+    showDialog({
         title: '确认删除',
         message: '确定要删除这条记账记录吗？此操作不可撤销。',
     })
